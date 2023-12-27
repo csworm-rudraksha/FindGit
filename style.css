@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,6 +16,7 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     min-height: 100vh;
+    padding-top: 60px; /* Adjust based on navbar height */
 }
 
 input {
@@ -58,7 +60,6 @@ input:focus {
 .user-info {
     color: #eee;
     margin-left: 2rem;
-    
 }
 
 .user-info h2 {
@@ -89,7 +90,7 @@ input:focus {
     border-radius: 5px;
     display: inline-block;
     color: white;
-    font-size: 0.7rem;
+    font-size: 20px;
     padding: 0.25rem 0.5rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
@@ -98,29 +99,6 @@ input:focus {
 
 .repo:hover {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-
-form {
-    position: relative;
-}
-
-input::placeholder::before {
-    content: "\1F50D";
-    margin-right: 5px;
-}
-
-.repo:not(:last-child) {
-    margin-right: 10px;
-}
-
-@keyframes loading {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 #loading {
@@ -138,11 +116,11 @@ input::placeholder::before {
 }
 
 .navbar {
-    position: fixed;  /* Fixed position */
-    top: 0;           /* Positioned at the top */
-    left: 0;          /* Positioned at the left */
-    right: 0;         /* Positioned at the right */
-    z-index: 1000;    /* Ensures it stays above other content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -162,7 +140,53 @@ input::placeholder::before {
     align-items: center;
 }
 
-/* Adjust the main content to account for the fixed navbar */
-body {
-    padding-top: 60px; /* Adjust this value based on the navbar height to ensure content is visible */
+/* Media queries for responsiveness */
+
+@media only screen and (max-width: 767px) {
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+    input {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .avatar {
+        height: 100px;
+        width: 100px;
+    }
+
+    .user-info {
+        margin: 1rem 0;
+    }
+
+    .user-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .user-info ul {
+        max-width: 100%;
+    }
+
+    .repo {
+        font-size: 1rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    #loading {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
+    }
+
+    body {
+        padding-top: 100px;
+    }
 }
