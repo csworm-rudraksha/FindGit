@@ -1,0 +1,161 @@
+/* Navbar styles */
+.navbar {
+  background-color: #777575;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 50px; /* Adjusted position */
+}
+
+#usernameInput {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+#searchButton {
+  padding: 6px 12px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background-color: #45a049;
+}
+
+.loading {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Adjust container to accommodate fixed navbar */
+.container {
+  padding-top: 70px; /* Adjusted for increased navbar height */
+  margin-bottom: 50px; /* Adjusted to leave space for the footer */
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  color: #eee;
+  position: fixed; /* Position the footer fixed at the bottom */
+  width: 100%; /* Make the footer full-width */
+  bottom: 0; /* Align the footer to the bottom */
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Rest of your CSS styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+  margin: 0;
+  padding: 0;
+  color: #eee;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  color: #eee;
+}
+
+.user-details {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #444;
+}
+
+.user-details.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.user-details img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.user-details img:hover {
+  transform: scale(1.05);
+}
+
+.user-details p {
+  color: #eee;
+  line-height: 1.6;
+}
+
+.repositories {
+  margin-top: 10px;
+}
+.repositories :hover{
+  background-color: #222;
+}
+
+.repository {
+  background-color: #555;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.repository a {
+  color: #eee;
+  text-decoration: none;
+}
